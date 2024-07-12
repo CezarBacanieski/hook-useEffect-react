@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+### Descrição do Componente
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este código é um exemplo de um componente React que utiliza o hook useEffect para interagir com uma API mockada e buscar dados sobre raças de cachorros.
 
-## Available Scripts
+## useEffect Inicial
 
-In the project directory, you can run:
+No primeiro useEffect, ao carregar o componente pela primeira vez, é feito um fetch para obter uma lista de raças de cachorros da API mockada em http://localhost:8080/doguinhos. Os dados recebidos são armazenados no estado racas usando o setRacas.
 
-### `npm start`
+## useEffect Dependente de busca
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O segundo useEffect é acionado sempre que o estado busca é alterado. Se o valor de busca for uma string com mais de 3 caracteres, é feito um fetch para a API com um parâmetro de consulta (nome). Os dados recebidos são novamente armazenados no estado racas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Input de Busca
 
-### `npm test`
+O campo de input permite ao usuário digitar um termo de busca, que atualiza o estado busca conforme o valor do input muda.
+## Renderização da Lista de Raças
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A lista de raças é renderizada dinamicamente no componente ul, onde cada raça é exibida como um item da lista li.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Esse componente exemplifica como fazer requisições a uma API e atualizar o estado do componente em resposta a essas requisições e entradas do usuário.
